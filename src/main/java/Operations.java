@@ -12,8 +12,8 @@ public class Operations {
     //  добиться переполнения при вычислениях, посмотреть результаты (вывести в консоль)
     static void overflowDataValues() {
         System.out.println("============================");
-        int integerMax = 32767;
-        int integerMin = - 32368;
+        int integerMax = Integer.MAX_VALUE;
+        int integerMin = - Integer.MIN_VALUE;
         System.out.println(integerMax + " Max Int");
         System.out.println(integerMin + " Min Int");
         System.out.println("more and less then max class value");
@@ -35,8 +35,8 @@ public class Operations {
         System.out.println("============================");
         int integerMax = 32767;
         int integerMid = 0;
-        System.out.println( (integerMid < integerMax && ++integerMax < integerMax) + " - AND");
-        System.out.println( (integerMid < integerMax || ++integerMax < integerMax) + " - OR");
+        System.out.println( (integerMid < (integerMax-1) && integerMax < integerMax) + " - AND");
+        System.out.println( (integerMid < (integerMax-1) && integerMax < integerMax) + " - OR");
     }
 
     //2) попробовать вычисления комбинаций типов данных (int и double)
@@ -45,8 +45,8 @@ public class Operations {
         int integerMax = 32767;
         byte byteVar = 127;
         float floatVar = 3.5F;
-        System.out.println(byteVar*2 + " byte out of range");
-        System.out.println(byteVar*floatVar + " byte * float");
+        System.out.println((byte)byteVar*2 + " byte out of range");
+        System.out.println((byte)byteVar*floatVar + " byte * float");
         System.out.println(integerMax/floatVar + " Integer /  float");
         System.out.println((int)(integerMax/floatVar) + " Integer /  float => type changed to int");
         System.out.println(integerMax*floatVar + " Integer *  float");
